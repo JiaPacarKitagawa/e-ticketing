@@ -82,108 +82,151 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8 max-w-6xl animate-fade-in">
-        <!-- Back Button -->
-        <a href="index.php" class="mb-8 inline-flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+    <!-- Tambahkan di bawah tag <body> -->
+<div class="fixed left-0 top-0 h-screen w-64 bg-white shadow-lg z-50 border-r border-gray-100">
+    <div class="p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-6">Admin Panel</h2>
+        <nav class="space-y-3">
+            <a href="#profil" class="block p-2 hover:bg-indigo-50 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors">
+                Profil Pengguna
+            </a>
+            <a href="#daftar-user" class="block p-2 hover:bg-indigo-50 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors">
+                Daftar User
+            </a>
+            <a href="#daftar-kota" class="block p-2 hover:bg-indigo-50 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors">
+                Daftar Kota
+            </a>
+            <a href="#rute-penerbangan" class="block p-2 hover:bg-indigo-50 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors">
+                Rute Penerbangan
+            </a>
+            <a href="#jadwal-penerbangan" class="block p-2 hover:bg-indigo-50 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors">
+                Jadwal Penerbangan
+            </a>
+            <a href="#maskapai" class="block p-2 hover:bg-indigo-50 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors">
+                Maskapai
+            </a>
+        </nav>
+    </div>
+</div>
+
+<!-- <div class="container mx-auto px-4 py-8 max-w-6xl animate-fade-in ml-64 text-4xl">
+     Selamat datang king, <?= $user['username'] ?>
+</div> -->
+
+<!-- Ubah div container utama menjadi seperti ini: -->
+<div class="container mx-auto px-4 py-8 max-w-6xl animate-fade-in ml-64"> <!-- Tambahkan ml-64 -->
+  <div class="container mx-auto px-4 py-8 max-w-6xl animate-fade-in">
+    <!-- Back Button -->
+    <a href="index.php" class="mb-8 inline-flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+      <span class="font-medium">Kembali</span>
+    </a>
+
+    <!-- Main Card -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Notifications Section -->
+      <div class="px-8 pt-6">
+        <?php if (isset($_SESSION['success'])): ?>
+          <div class="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-3">
+            <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
-            <span class="font-medium">Kembali</span>
-        </a>
+            <span class="text-emerald-600 font-medium"><?= $_SESSION['success'] ?></span>
+            <?php unset($_SESSION['success']); ?>
+          </div>
+        <?php endif; ?>
 
-        <!-- Main Card -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-            <!-- Notifications Section -->
-            <div class="px-8 pt-6">
-                <?php if (isset($_SESSION['success'])): ?>
-                    <div class="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="text-emerald-600 font-medium"><?= $_SESSION['success'] ?></span>
-                        <?php unset($_SESSION['success']); ?>
-                    </div>
-                <?php endif; ?>
+        <?php if (isset($_SESSION['error'])): ?>
+          <div class="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-lg flex items-center space-x-3">
+            <svg class="w-5 h-5 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-rose-600 font-medium"><?= $_SESSION['error'] ?></span>
+            <?php unset($_SESSION['error']); ?>
+          </div>
+        <?php endif; ?>
+      </div>
 
-                <?php if (isset($_SESSION['error'])): ?>
-                    <div class="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-lg flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="text-rose-600 font-medium"><?= $_SESSION['error'] ?></span>
-                        <?php unset($_SESSION['error']); ?>
-                    </div>
-                <?php endif; ?>
-            </div>
+      <!-- Profile Section -->
+      <div class="px-8 py-6">
+        <header class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-800 flex items-center space-x-3">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <ul class="">
+                <li>Profile</li>
+                <li>Logout</li>
+            </ul>
+        </h2>
+        
+          <span class="text-sm font-medium text-indigo-600 bg-indigo-50 px-3 mt-2 py-1 mt-1 rounded-full">
+            <?= ucfirst($user['roles']) ?>
+          </span>
+        </header>
 
-            <!-- Profile Section -->
-            <div class="px-8 py-6">
-                <header class="mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800 flex items-center space-x-3">
-                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                        <span>Profil Pengguna</span>
-                    </h2>
-                    <span class="text-sm font-medium text-indigo-600 bg-indigo-50 px-3 py-1 mt-1 rounded-full">
-                        <?= ucfirst($user['roles']) ?>
-                    </span>
-                </header>
-
-                <!-- Profile Content -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Profile Info -->
-                    <div class="space-y-6">
-                        <div class="bg-gray-50 p-5 rounded-xl">
-                            <dl class="space-y-4">
-                                <div>
-                                    <dt class="text-sm font-medium text-gray-500 mb-1">Username</dt>
-                                    <dd class="font-medium text-gray-800"><?= htmlspecialchars($user['username']) ?></dd>
-                                </div>
-                                <div>
-                                    <dt class="text-sm font-medium text-gray-500 mb-1">Nama Lengkap</dt>
-                                    <dd class="font-medium text-gray-800"><?= htmlspecialchars($user['nama_lengkap']) ?></dd>
-                                </div>
-                                <div>
-                                    <dt class="text-sm font-medium text-gray-500 mb-1">Nomor Telepon</dt>
-                                    <dd class="font-medium text-gray-800">
-                                        <?= $user['no_telp'] ? htmlspecialchars($user['no_telp']) : '-' ?>
-                                    </dd>
-                                </div>
-                            </dl>
-                        </div>
-                    </div>
-
-                    <!-- Forms Section -->
-                    <div class="space-y-8">
-                        <!-- Update Profile Form -->
-                        <form method="POST" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-6">Ubah Profil</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
-                                    <input type="text" name="username" value="<?= htmlspecialchars($user['username']) ?>"
-                                        class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
-                                    <input type="text" name="nama_lengkap" value="<?= htmlspecialchars($user['nama_lengkap']) ?>"
-                                        class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
-                                    <input type="tel" name="no_telp" value="<?= htmlspecialchars($user['no_telp']) ?>"
-                                        class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
-                                </div>
-                                <button type="submit" class="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors shadow-sm">
-                                    Simpan Perubahan
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+        <!-- Profile Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Profile Info dengan Profile Picture -->
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-5 rounded-xl">
+              <!-- Profile Picture -->
+              <div class="flex justify-start mb-4">
+                <img src="../assets/images/<?= isset($user['profile_picture']) && !empty($user['profile_picture']) ? htmlspecialchars($user['profile_picture']) : 'https://via.placeholder.com/150' ?>" alt="Profile Picture" class="w-32 h-32 rounded-full object-cover">
+              </div>
+              <dl class="space-y-4">
+                <div>
+                  <dt class="text-sm font-medium text-gray-500 mb-1">Username</dt>
+                  <dd class="font-medium text-gray-800"><?= htmlspecialchars($user['username']) ?></dd>
                 </div>
+                <div>
+                  <dt class="text-sm font-medium text-gray-500 mb-1">Nama Lengkap</dt>
+                  <dd class="font-medium text-gray-800"><?= htmlspecialchars($user['nama_lengkap']) ?></dd>
+                </div>
+                <div>
+                  <dt class="text-sm font-medium text-gray-500 mb-1">Nomor Telepon</dt>
+                  <dd class="font-medium text-gray-800">
+                    <?= $user['no_telp'] ? htmlspecialchars($user['no_telp']) : '-' ?>
+                  </dd>
+                </div>
+              </dl>
             </div>
+          </div>
+
+          <!-- Forms Section -->
+          <div class="space-y-8">
+              
+            <!-- Update Profile Form -->
+            <form method="POST" class="bg-white rounded-xl px-6  shadow-sm border border-gray-100">
+              <h3 class="text-lg font-semibold text-gray-800 mb-6">Ubah Profil</h3>
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                  <input type="text" name="username" value="<?= htmlspecialchars($user['username']) ?>"
+                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                  <input type="text" name="nama_lengkap" value="<?= htmlspecialchars($user['nama_lengkap']) ?>"
+                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
+                  <input type="tel" name="no_telp" value="<?= htmlspecialchars($user['no_telp']) ?>"
+                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
+                </div>
+                <button type="submit" class="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors shadow-sm">
+                  Simpan Perubahan
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
+    </div>
+
 
         <div class="mt-12 bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 p-8">
             <h2 class="text-2xl font-bold text-gray-800 mb-6">Daftar Semua User</h2>
@@ -509,8 +552,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             ?>
         </div>
-            
     </div>
-</body>
-
+        </body>
 </html>
