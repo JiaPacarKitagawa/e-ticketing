@@ -100,6 +100,9 @@ $user = $result->fetch_assoc();
                     <!-- Profile Info -->
                     <div class="space-y-6">
                         <div class="bg-gray-50 p-5 rounded-xl">
+                        <div class="flex justify-start mb-4">
+                <img src="../assets/images/<?= isset($user['profile_picture']) && !empty($user['profile_picture']) ? htmlspecialchars($user['profile_picture']) : 'https://via.placeholder.com/150' ?>" alt="Profile Picture" class="w-32 h-32 rounded-full object-cover">
+              </div>
                             <dl class="space-y-4">
                                 <div>
                                     <dt class="text-sm font-medium text-gray-500 mb-1">Username</dt>
@@ -122,14 +125,20 @@ $user = $result->fetch_assoc();
                     <!-- Forms Section -->
                     <div class="space-y-8">
                         <!-- Update Profile Form -->
-                        <form method="POST" action="update_profile.php" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                        <form method="POST" action="update_profile.php" enctype="multipart/form-data" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                             <h3 class="text-lg font-semibold text-gray-800 mb-6">Ubah Profil</h3>
                             <div class="space-y-4">
+                                
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
                                     <input type="text" name="username" value="<?= htmlspecialchars($user['username']) ?>"
-                                        class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
                                 </div>
+                                <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Profile</label>
+                                        <input type="file" name="profile_picture" value="<?= htmlspecialchars($user ['profile_picture'] )?>"
+                                            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
+                                    </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
                                     <input type="text" name="nama_lengkap" value="<?= htmlspecialchars($user['nama_lengkap']) ?>"
