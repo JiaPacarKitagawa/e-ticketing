@@ -164,7 +164,7 @@ $user = $result->fetch_assoc();
                                     <input type="password" name="current_password" required
                                         class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all">
                                 </div>
-                                <div>
+                                <div>x`
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Password Baru</label>
                                     <input type="password" name="new_password" id="new_password" required
                                         class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all"

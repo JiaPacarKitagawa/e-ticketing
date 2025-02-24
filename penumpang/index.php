@@ -83,21 +83,25 @@ $user = $result->fetch_assoc();
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TiketinAja!</span>
             </a>
-                <div class="relative inline-block text-left md:order-2">
-                    <button id="dropdownButton" data-dropdown-toggle="dropdownMenu" type="button" class="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-blue-700 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                        Halo, <?= $user['username'] ?>
-                        <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
+            <div class="relative inline-block text-left md:order-2">
+                <button id="dropdownButton" data-dropdown-toggle="dropdownMenu" type="button" class="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-blue-700 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Halo, <?= $user['username'] ?>
+                    <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
                 <!-- Dropdown menu -->
                 <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-44 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
-                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdownButton">
-                        <img src="../assets/images/<?= $user['profile_picture'] ?>" alt="">
+                    <div class="py-1 text-center" role="menu" aria-orientation="vertical" aria-labelledby="dropdownButton">
+                        <div class="flex justify-center py-3">
+                            <img src="../assets/images/<?= $user['profile_picture'] ?>" alt="Profile Picture" class="rounded-full h-14 w-14 object-cover border-2 border-gray-300">
+                        </div>
                         <a href="../ProfileFunction/profile.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Profile</a>
                         <a href="../logout.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</a>
                     </div>
                 </div>
+
+
             </div>
 
             <!-- Centered Navigation -->
@@ -118,7 +122,7 @@ $user = $result->fetch_assoc();
     </nav>
 
     <div class="relative" id="home">
-        <div class="w-full bg-cover bg-center h-[50vh] sm:h-[70vh] md:h-[85vh]" style="background-image: url('./assets/images/maingpage.webp');"></div>
+        <div class="w-full bg-cover bg-center h-[50vh] sm:h-[70vh] md:h-[85vh]" style="background-image: url('../assets/images/maingpage.webp');"></div>
         <div class="absolute bottom-0 left-0 px-5 py-5">
             <h1 class="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
                 Selamat Datang di TiketinAja!

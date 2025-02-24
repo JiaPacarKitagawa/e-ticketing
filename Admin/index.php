@@ -78,7 +78,7 @@ require '../koneksi.php';
             </a>
             <div class="relative inline-block text-left md:order-2">
                 <button id="dropdownButton" data-dropdown-toggle="dropdownMenu" type="button" class="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-blue-700 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                    Halo, <?php echo $_SESSION["username"]; ?>
+                    Halo, <?php echo $_SESSION["roles"]; ?>
                     <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>

@@ -75,18 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             animation: fadeIn 0.3s ease-out;
         }
 
-        .password-strength-meter {
-            @apply h-1.5 rounded-full mt-2 transition-all duration-500;
-        }
-
-        #profile-preview {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        #profile-preview:hover {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+        
     </style>
 </head>
 
@@ -604,6 +593,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             document.getElementById('profile-preview').addEventListener('mouseout', function() {
                 this.style.transform = 'scale(1)';
             });
+
+          
+                // Hamburger menu untuk mobile
+                const hamburger = document.createElement('div');
+            hamburger.className = 'sm:hidden fixed top-4 right-4 z-50 cursor-pointer p-2 bg-gray-100 rounded-lg';
+            hamburger.innerHTML = `
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+`;
+
+            const sidebar = document.querySelector('.fixed.left-0');
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+
+            document.body.prepend(hamburger);
+
+            // Sembunyikan sidebar default di mobile
+            window.addEventListener('DOMContentLoaded', () => {
+                if (window.innerWidth < 640) {
+                    sidebar.classList.add('hidden');
+                }
+            });
+        
         </script>
 </body>
 

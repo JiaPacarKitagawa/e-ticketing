@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
@@ -74,10 +74,6 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                 font-size: 24px;
             }
         }
-
-        
-
-        
     </style>
 </head>
 
@@ -124,314 +120,291 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
         </div>
     </div>
 
-    <section id="destinasi">
+    <section class="max-w-7xl mx-auto px-4 py-8" id="destinasi">
+        <!-- Judul & Subjudul -->
+        <h1 class="text-2xl md:text-3xl font-bold mb-2">
+            Promo tiket pesawat terbaik dari Indonesia
+        </h1>
+        <p class="text-gray-600 mb-6">
+            Berikut promo tiket pesawat dengan harga terendah. Pesan segera – semuanya berangkat
+            dalam tiga bulan ke depan.
+        </p>
 
-        <div class="container pt-8">
-            <h2 class="text-destinasi text-slate-900 tracking-wide mb-8">Destinasi Wisata Populer</h2>
-        </div>
-
-        <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
+        <!-- Grid Card -->
+        <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-3">
+            <!-- Card 1: Kuala Lumpur -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Gambar -->
+                <img
+                    src="https://via.placeholder.com/600x300"
+                    alt="Kuala Lumpur"
+                    class="w-full h-48 object-cover" />
+                <!-- Konten card -->
+                <div class="p-4">
+                    <h2 class="text-xl font-bold text-gray-800">Kuala Lumpur</h2>
+                    <p class="text-sm text-gray-500 mb-4">Malaysia</p>
+                    <!-- Jadwal penerbangan berangkat -->
+                    <div class="flex items-start gap-2 mb-2">
+                        <!-- Ikon pesawat -->
+                        <span class="text-xl">✈️</span>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Jum, 7 Mar</p>
+                            <p class="text-xs text-gray-500">PDG - KUL dengan Super Air Jet</p>
                         </div>
-                        <div class="p-8">   
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
+                        <span class="text-xs text-gray-500">Langsung</span>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
+                    <!-- Jadwal penerbangan pulang -->
+                    <div class="flex items-start gap-2 mb-4">
+                        <span class="text-xl">✈️</span>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Min, 9 Mar</p>
+                            <p class="text-xs text-gray-500">KUL - PDG dengan Super Air Jet</p>
                         </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
+                        <span class="text-xs text-gray-500">Langsung</span>
                     </div>
+                    <!-- Harga -->
+                    <p class="text-sm font-semibold text-blue-600">
+                        mulai Rp 628.437 &gt;
+                    </p>
                 </div>
             </div>
-        </div>
 
-        <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 py-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
+            <!-- Card 2: Kota Bandar Lampung -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Gambar (contoh ilustrasi) -->
+                <img
+                    src="https://via.placeholder.com/600x300/edf2f7/000000?text=Ilustrasi+Lampung"
+                    alt="Kota Bandar Lampung"
+                    class="w-full h-48 object-cover" />
+                <!-- Konten card -->
+                <div class="p-4">
+                    <h2 class="text-xl font-bold text-gray-800">Kota Bandar Lampung</h2>
+                    <p class="text-sm text-gray-500 mb-4">Indonesia</p>
+                    <!-- Jadwal penerbangan berangkat -->
+                    <div class="flex items-start gap-2 mb-2">
+                        <span class="text-xl">✈️</span>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Sab, 15 Mar</p>
+                            <p class="text-xs text-gray-500">PDG - TKG dengan Citilink</p>
                         </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
+                        <span class="text-xs text-gray-500">Langsung</span>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
+                    <!-- Jadwal penerbangan pulang -->
+                    <div class="flex items-start gap-2 mb-4">
+                        <span class="text-xl">✈️</span>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Sen, 17 Mar</p>
+                            <p class="text-xs text-gray-500">TKG - PDG dengan Citilink</p>
                         </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
+                        <span class="text-xs text-gray-500">Langsung</span>
                     </div>
+                    <!-- Harga -->
+                    <p class="text-sm font-semibold text-blue-600">
+                        mulai Rp 762.652 &gt;
+                    </p>
                 </div>
             </div>
-        </div>
 
-        <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 pb-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
+            <!-- Card 3: Singapura -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Gambar -->
+                <img
+                    src="https://via.placeholder.com/600x300"
+                    alt="Singapura"
+                    class="w-full h-48 object-cover" />
+                <!-- Konten card -->
+                <div class="p-4">
+                    <h2 class="text-xl font-bold text-gray-800">Singapura</h2>
+                    <p class="text-sm text-gray-500 mb-4">Singapore</p>
+                    <!-- Jadwal penerbangan berangkat -->
+                    <div class="flex items-start gap-2 mb-2">
+                        <span class="text-xl">✈️</span>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Rab, 12 Mar</p>
+                            <p class="text-xs text-gray-500">PDG - SIN dengan Indonesia AirAsia</p>
                         </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
+                        <span class="text-xs text-gray-500">Langsung</span>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
+                    <!-- Jadwal penerbangan pulang -->
+                    <div class="flex items-start gap-2 mb-4">
+                        <span class="text-xl">✈️</span>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Jum, 14 Mar</p>
+                            <p class="text-xs text-gray-500">SIN - PDG dengan Indonesia AirAsia</p>
                         </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
+                        <span class="text-xs text-gray-500">Langsung</span>
                     </div>
+                    <!-- Harga -->
+                    <p class="text-sm font-semibold text-blue-600">
+                        mulai Rp 1.286.037 &gt;
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- maskapai -->
+    <section class="max-w-7xl mx-auto px-4 ">
 
-    <section id="maskapai" class="bg-sky-600">
-        <div class="container pt-8">
-            <h2 class="text-maskapai text-white tracking-wide mb-8">Maskapai Penerbangan</h2>
+
+        <div class=" border border-gray-300 bg-white rounded-lg p-4 flex items-start space-x-3">
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-gray-400 mt-1 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13 16h-1v-4h-1m1-4h.01M12 3c-4.418 0-8 
+             3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z" />
+            </svg>
+
+            <p class="text-sm text-gray-700 leading-relaxed">
+                <strong>Bagaimana kami mendapatkan promo ini?</strong> Kami mencari semua penerbangan
+                kelas ekonomi dari Indonesia yang berangkat dalam tiga bulan ke depan. Semua tarif ini
+                menawarkan harga terhemat bila dibandingkan dengan harga rata-rata. Data kami diperbarui
+                secara berkala dan tanggal keberangkatan dapat berubah sewaktu-waktu.
+            </p>
         </div>
+    </section>
 
-        <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
-                        </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
+
+
+    <section class="max-w-7xl mx-auto px-4 py-12">
+        <div class="bg-gray-200 py-10 rounded-xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 ">
+                Mencari promo tiket pesawat terbaik ke mana saja di seluruh dunia?
+            </h2>
+            < class="text-center text-gray-700 px-5 mx-auto mb-12 leading-relaxed">
+                Semua jadi mudah dengan Skyscanner. 100 juta wisatawan menggunakan Skyscanner
+                untuk membandingkan promo dan penawaran tiket pesawat dengan lebih dari
+                1200 maskapai dan vendor perjalanan. Dengan begitu banyak pilihan penerbangan
+                dan hotel dalam satu tempat, Anda bisa merencanakan perjalanan Anda dengan
+                lebih cerdas dan mudah.
+                </p>
+
+                <div class="grid gap-8 md:grid-cols-3">
+                    <!-- Kolom 1 -->
+                    <div class="flex flex-col items-center text-center p-4">
+                        <!-- Ikon (contoh globe) -->
+                        <img
+                            src="assets/images/icon/planet-earth.png"
+                            alt="Ikon Globe"
+                            class="mb-4 h-20" />
+                        <h3 class="text-lg font-semibold mb-2">
+                            Cari 'Semua Tempat' dan telusuri semua destinasi
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Dengan fitur 'Semua Tempat', Anda tak perlu kebingungan memikirkan tujuan.
+                            Temukan penerbangan terbaik ke berbagai destinasi, bahkan yang belum Anda
+                            pikirkan sebelumnya.
+                        </p>
+                    </div>
+
+                    <!-- Kolom 2 -->
+                    <div class="flex flex-col items-center text-center p-4">
+                        <!-- Ikon (contoh tiket) -->
+                        <img
+                            src="https://via.placeholder.com/80"
+                            alt="Ikon Tiket"
+                            class="mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">
+                            Bayar lebih murah dengan harga transparan
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Promo tiket pesawat? Tenang. Kami menampilkan harga jujur.
+                            Bersama kami, Anda tak perlu khawatir ada biaya tambahan yang tersembunyi.
+                        </p>
+                    </div>
+
+                    <!-- Kolom 3 -->
+                    <div class="flex flex-col items-center text-center p-4">
+                        <!-- Ikon (contoh alarm) -->
+                        <img
+                            src="https://via.placeholder.com/80"
+                            alt="Ikon Alarm"
+                            class="mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">
+                            Pesan harga terbaik dengan Notifikasi Harga
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Semua orang suka diskon! Aktifkan Notifikasi Harga untuk rute penerbangan
+                            yang Anda inginkan. Kami akan memberi tahu ketika tarif turun.
+                        </p>
                     </div>
                 </div>
+        </div>
+    </section>
 
-                <!-- Card 2 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
-                        </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>    
-                        </div>
-                    </div>
+
+
+    <section class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Judul -->
+        <h2 class="text-2xl md:text-3xl font-semibold mb-2">
+            Rencanakan perjalanan Anda tanpa khawatir
+        </h2>
+        <!-- Subjudul -->
+        <p class="text-gray-700 mb-8">
+            Misi kami adalah membantu Anda bepergian tanpa khawatir dan memperlancar perjalanan Anda.
+        </p>
+
+        <!-- Dua Kolom Poin -->
+        <div class="grid gap-8 md:grid-cols-2">
+            <!-- Kolom 1 -->
+            <div class="flex items-start space-x-3">
+                <!-- Ikon (contoh Heroicons: Ticket) -->
+                <div class="w-8 h-8 text-blue-500 flex-shrink-0">
+                    <!-- Anda bisa ganti ikon sesuai keinginan, misalnya: -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 21V8a2 2 0 012-2h8a2 2 0 012 2v13m-5-9H4a2 2 0 00-2 2v5a2 2 0 002 2h12m-3-5v4" />
+                    </svg>
+                </div>
+                <!-- Teks -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-1">
+                        Dapatkan promo tiket pesawat fleksibel
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Cari promo tiket fleksibel untuk penyesuaian ulang jika penerbangan Anda berubah
+                        atau dibatalkan.
+                    </p>
                 </div>
             </div>
-        </div>
 
-        <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 py-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
-                        </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
-                    </div>
+            <!-- Kolom 2 -->
+            <div class="flex items-start space-x-3">
+                <!-- Ikon (contoh Heroicons: Building) -->
+                <div class="w-8 h-8 text-blue-500 flex-shrink-0">
+                    <!-- Anda bisa ganti ikon sesuai keinginan, misalnya: -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 7v10a1 1 0 001 1h3m12-11v11a1 1 0 01-1 1h-3m-8 0h8m-8-5h8m-8-4h8m-9 9V7a2 2 0 012-2h8a2 2 0 012 2v10" />
+                    </svg>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
-                        </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 pb-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
-                        </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="overflow-hidden rounded-xl bg-white shadow-md">
-                    <div class="md:flex">
-                        <div class="md:shrink-0">
-                            <img
-                                class="h-48 w-full object-cover md:h-full md:w-48"
-                                src="./assets/images/international.png"
-                                alt="Modern building architecture" />
-                        </div>
-                        <div class="p-8">
-                            <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Wisata International</div>
-                            <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-                                Incredible accommodation for your team
-                            </a>
-                            <p class="mt-2 text-gray-500">
-                                Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-                                places to do just that.
-                            </p>
-                        </div>
-                    </div>
+                <!-- Teks -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-1">
+                        Tambahkan hotel dan sewa mobil
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Rencanakan perjalanan Anda berikut hotel dan sewa mobil, dan simpan semua pesanan
+                        Anda di satu tempat.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="promo">
-    <div class="container pt-8">
-            <h2 class="text-promo tracking-wide mb-8">Promo Menarik Bulan Ini ! ...</h2>
-        </div>
-    </section>
+
 
 
     <footer class="bg-white text-black pt-12">
@@ -541,4 +514,5 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </html>
